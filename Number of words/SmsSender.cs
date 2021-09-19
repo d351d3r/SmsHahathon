@@ -7,7 +7,7 @@ namespace Number_of_words
 {
     class SmsSender
     {
-        public static void Send(string Phonenumber,DateTime date,string railway, int coach) {
+        public static void Send(string Phonenumber,DateTime date,int railway, string coach) {
             // Find your Account SID and Auth Token at twilio.com/console
             // and set the environment variables. See http://twil.io/secure
             string accountSid = "ACf09dd6e169b9f24e3015b81954b5b3d5";
@@ -19,7 +19,7 @@ namespace Number_of_words
             var to = new Twilio.Types.PhoneNumber(Phonenumber);
             /* string accountSid = Environment.GetEnvironmentVariable("TWILIO_ACCOUNT_SID");
                string authToken = Environment.GetEnvironmentVariable("TWILIO_AUTH_TOKEN");*/
-            string body = "Здравствуйте, ваш поезд прибывает" + date + " вагон номер №" + railway + " отправляется с пути "+coach;
+            string body = "Здравствуйте, ваш поезд прибывает " + date + " поезд №" + coach + " отправляется с пути "+ railway;
             TwilioClient.Init(accountSid, authToken);
 
             var message = MessageResource.Create(

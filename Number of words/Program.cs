@@ -46,7 +46,7 @@ namespace Number_of_words
             /*            Console.WriteLine(parser.GetTrainNumber());
             Console.WriteLine(parser.GetDepartureTime());
             Console.WriteLine(parser.GetPlatform());*/
-            SmsSender.Send("+79142167272", parser.GetDepartureTime(), parser.GetTrainNumber(), parser.GetPlatform());
+            SmsSender.Send("+79142167272", parser.GetDepartureTime(), parser.GetPlatform(), parser.GetTrainNumber());
             Console.ReadKey();
         }
     }
